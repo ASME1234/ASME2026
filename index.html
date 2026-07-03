@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASME-AITR | Student Chapter — Acropolis Institute of Technology and Research</title>
-    <meta name="description" content="ASME Student Chapter at Acropolis Institute of Technology and Research — driving mechanical and automotive engineering excellence through hands-on learning, innovation and industry exposure.">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ASME-AITR | Student Chapter — Acropolis Institute of Technology and
+      Research
+    </title>
+    <meta
+      name="description"
+      content="ASME Student Chapter at Acropolis Institute of Technology and Research — driving mechanical and automotive engineering excellence through hands-on learning, innovation and industry exposure."
+    />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <style>
-      /* ===== Tokens ===== */
+      /* ===== Tokens (Light) ===== */
       :root {
         --primary-color: #0a2540;
         --primary-light: #113a65;
@@ -22,11 +34,53 @@
         --text-light: #ffffff;
         --bg-light: #f8f9fa;
         --bg-white: #ffffff;
+        --bg-card: #f8f9fa;
         --border-color: #e0e0e0;
         --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         --transition: all 0.3s ease-in-out;
         --font-display: "Rajdhani", sans-serif;
         --font-body: "Inter", sans-serif;
+        --nav-bg: #0a2540;
+        --hero-overlay-1: rgba(10, 37, 64, 0.82);
+        --hero-overlay-2: rgba(10, 37, 64, 0.55);
+        --footer-bg: #eef1f6;
+        --footer-text: #222222;
+        --footer-text-muted: #5b6b7d;
+        --footer-item-bg: rgba(10, 37, 64, 0.05);
+        --footer-item-border: rgba(10, 37, 64, 0.12);
+        --footer-border: #dde3ea;
+        --footer-copyright: #777777;
+        --footer-credit: #8a94a1;
+        --ink-on-accent: #0a2540;
+        --menu-bg: #113a65;
+      }
+
+      /* ===== Tokens (Dark) ===== */
+      html[data-theme="dark"] {
+        --primary-color: #f8ab1c;
+        --primary-light: #ffc857;
+        --secondary-color: #4da8ff;
+        --accent-color: #f8ab1c;
+        --text-dark: #eef2f7;
+        --text-gray: #b7c2cf;
+        --text-light: #ffffff;
+        --bg-light: #0c1420;
+        --bg-white: #121d2e;
+        --bg-card: #0f1a29;
+        --border-color: #223349;
+        --box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+        --nav-bg: #081120;
+        --hero-overlay-1: rgba(5, 12, 22, 0.88);
+        --hero-overlay-2: rgba(5, 12, 22, 0.65);
+        --footer-bg: #030a13;
+        --footer-text: #ffffff;
+        --footer-text-muted: #9fb0c4;
+        --footer-item-bg: rgba(255, 255, 255, 0.1);
+        --footer-item-border: rgba(255, 255, 255, 0.2);
+        --footer-border: rgba(255, 255, 255, 0.1);
+        --footer-copyright: #888888;
+        --footer-credit: #6b7c90;
+        --menu-bg: #142238;
       }
 
       /* ===== Reset ===== */
@@ -41,12 +95,18 @@
       }
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
+        max-width: 100%;
       }
       body {
         background-color: var(--bg-light);
         color: var(--text-dark);
         line-height: 1.6;
         overflow-x: hidden;
+        max-width: 100%;
+        transition:
+          background-color 0.4s ease,
+          color 0.4s ease;
       }
       a {
         text-decoration: none;
@@ -62,7 +122,12 @@
         outline-offset: 3px;
       }
 
-      h1, h2, h3, h4, .logo, .btn {
+      h1,
+      h2,
+      h3,
+      h4,
+      .logo,
+      .btn {
         font-family: var(--font-display);
         letter-spacing: 0.3px;
       }
@@ -71,7 +136,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         text-align: center;
-        margin-bottom: 0.5rem;
+        margin-bottom: 2.75rem;
         color: var(--primary-color);
       }
       .section-subtitle {
@@ -79,7 +144,7 @@
         font-size: 1.05rem;
         color: var(--secondary-color);
         font-weight: 600;
-        margin-bottom: 3rem;
+        margin-bottom: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         display: flex;
@@ -88,14 +153,17 @@
         gap: 0.6rem;
       }
       section {
-        padding: 5rem 2rem;
+        padding: 4.5rem 2rem;
+        scroll-margin-top: 65px;
       }
 
       /* ===== Scroll Reveal ===== */
       .reveal {
         opacity: 0;
         transform: translateY(28px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
       }
       .reveal.visible {
         opacity: 1;
@@ -115,13 +183,14 @@
         justify-content: space-between;
         align-items: center;
         padding: 1.1rem 4rem;
-        background-color: var(--primary-color);
+        background-color: var(--nav-bg);
         color: var(--text-light);
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.4s ease;
       }
       #desktop-nav .logo {
         font-size: 1.6rem;
@@ -129,6 +198,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        color: var(--text-light);
       }
       #desktop-nav .logo i {
         color: var(--accent-color);
@@ -139,7 +209,8 @@
       }
       #desktop-nav .nav-links {
         display: flex;
-        gap: 2.5rem;
+        align-items: center;
+        gap: 2.2rem;
       }
       #desktop-nav .nav-links li a {
         color: var(--text-light);
@@ -161,18 +232,92 @@
       #desktop-nav .nav-links li a:hover::after {
         width: 100%;
       }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+
+      /* ===== Theme Toggle ===== */
+      .theme-toggle {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--accent-color);
+        font-size: 1.05rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.3s ease,
+          border-color 0.3s ease,
+          transform 0.3s ease;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+      .theme-toggle:hover {
+        background: var(--accent-color);
+        color: var(--ink-on-accent);
+        border-color: var(--accent-color);
+        transform: scale(1.08);
+      }
+      .theme-toggle i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition:
+          transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+          opacity 0.35s ease;
+      }
+      .theme-toggle .fa-moon {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+      .theme-toggle .fa-sun {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(90deg) scale(0.4);
+      }
+      html[data-theme="dark"] .theme-toggle .fa-moon {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-90deg) scale(0.4);
+      }
+      html[data-theme="dark"] .theme-toggle .fa-sun {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+      #hamburger-nav .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+      #hamburger-nav .nav-right {
+        gap: 0.8rem;
+        flex-shrink: 0;
+      }
 
       #hamburger-nav {
         display: none;
-        background-color: var(--primary-color);
-        padding: 1rem 2rem;
+        background-color: var(--nav-bg);
+        padding: 1rem 1.25rem;
         position: fixed;
         width: 100%;
+        max-width: 100%;
         top: 0;
+        left: 0;
         z-index: 1000;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: nowrap;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        box-sizing: border-box;
       }
       #hamburger-nav .logo {
         font-size: 1.35rem;
@@ -181,17 +326,23 @@
         display: flex;
         align-items: center;
         gap: 0.4rem;
+        min-width: 0;
+        flex-shrink: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       #hamburger-nav .logo span {
         color: var(--accent-color);
       }
       .hamburger-icon {
-        width: 30px;
-        height: 22px;
+        width: 26px;
+        height: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
+        flex-shrink: 0;
       }
       .hamburger-icon span {
         height: 3px;
@@ -214,7 +365,7 @@
         top: 100%;
         right: 0;
         width: 100%;
-        background-color: var(--primary-light);
+        background-color: var(--menu-bg);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
@@ -241,6 +392,7 @@
       #hero {
         position: relative;
         min-height: 100vh;
+        min-height: 100dvh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -248,7 +400,11 @@
         padding: 0 2rem;
         margin-top: 60px;
         overflow: hidden;
-        background: linear-gradient(rgba(10, 37, 64, 0.82), rgba(10, 37, 64, 0.55)), url("assets/acropolis-institute-of-technology-and-research-indore-madhya-pradesh-banner.jpg") center/cover no-repeat fixed;
+        background:
+          linear-gradient(var(--hero-overlay-1), var(--hero-overlay-2)),
+          url("assets/acropolis-institute-of-technology-and-research-indore-madhya-pradesh-banner.jpg")
+            center/cover no-repeat fixed;
+        transition: background 0.4s ease;
       }
       #hero .hero-gear {
         position: absolute;
@@ -274,7 +430,6 @@
         z-index: 1;
         color: var(--text-light);
         max-width: 900px;
-        animation: fadeInUp 1s ease forwards;
       }
       .hero-content .eyebrow {
         display: inline-block;
@@ -284,26 +439,53 @@
         color: var(--accent-color);
         font-weight: 600;
         margin-bottom: 1rem;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.1s forwards;
       }
       .hero-content h1 {
         font-size: 3.6rem;
         font-weight: 700;
         line-height: 1.15;
-        margin-bottom: 1rem;
+        margin-bottom: 0.9rem;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.25s forwards;
       }
       .hero-content p.tagline {
         font-size: 1.4rem;
-        color: var(--bg-light);
+        color: var(--accent-color);
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+        font-family: var(--font-display);
+        letter-spacing: 0.5px;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.4s forwards;
+      }
+      .hero-content p.subtagline {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.88);
         margin-bottom: 2.5rem;
         font-weight: 300;
         font-family: var(--font-body);
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.55s forwards;
+      }
+      .hero-cta-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease 0.7s forwards;
       }
       .btn {
         display: inline-block;
         padding: 1rem 2.5rem;
         font-size: 1.1rem;
         font-weight: 600;
-        color: var(--primary-color);
+        color: var(--ink-on-accent);
         background-color: var(--accent-color);
         border-radius: 50px;
         transition: var(--transition);
@@ -316,19 +498,42 @@
         box-shadow: 0 6px 20px rgba(248, 171, 28, 0.6);
         background-color: #ffb833;
       }
+      .btn-outline {
+        background: transparent;
+        color: var(--text-light);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        box-shadow: none;
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--text-light);
+        border-color: var(--text-light);
+        box-shadow: none;
+      }
 
       @keyframes spin-slow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
       @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(30px); }
-        100% { opacity: 1; transform: translateY(0); }
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       /* ===== About ===== */
       #about {
         background-color: var(--bg-white);
+        transition: background-color 0.4s ease;
       }
       .about-container {
         max-width: 1200px;
@@ -360,7 +565,7 @@
       .about-card {
         flex: 1;
         min-width: 140px;
-        background: var(--bg-light);
+        background: var(--bg-card);
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
@@ -403,6 +608,7 @@
       /* ===== Team ===== */
       #team-lead {
         background-color: var(--bg-white);
+        transition: background-color 0.4s ease;
       }
       .team-container {
         max-width: 1200px;
@@ -418,7 +624,8 @@
         padding-bottom: 0.5rem;
         display: table;
       }
-      .team-grid-top, .team-grid-bottom {
+      .team-grid-top,
+      .team-grid-bottom {
         display: flex;
         justify-content: center;
         gap: 2rem;
@@ -426,7 +633,7 @@
       }
       .team-card {
         position: relative;
-        background: var(--bg-light);
+        background: var(--bg-card);
         border-radius: 16px;
         padding: 2rem;
         text-align: center;
@@ -467,6 +674,7 @@
       /* ===== Events ===== */
       #events {
         background-color: var(--bg-light);
+        transition: background-color 0.4s ease;
       }
       .events-container {
         max-width: 1200px;
@@ -512,17 +720,40 @@
         font-weight: 600;
       }
 
-      /* ===== Contact ===== */
-      #contact {
-        background-color: var(--primary-color);
-        color: var(--text-light);
+      /* ===== Footer (merged with Contact) ===== */
+      footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 4.5rem 2rem 1.5rem;
+        transition:
+          background-color 0.4s ease,
+          color 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      footer .footer-gear {
+        position: absolute;
+        font-size: 14rem;
+        color: rgba(248, 171, 28, 0.06);
+        right: -3rem;
+        bottom: -4rem;
+        animation: spin-slow 50s linear infinite;
+        pointer-events: none;
+      }
+      .footer-top {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto 2.5rem;
         text-align: center;
       }
-      #contact .section-title {
-        color: var(--text-light);
-      }
-      #contact .section-subtitle {
+      .footer-top .section-subtitle {
         color: var(--accent-color);
+      }
+      .footer-top .footer-title {
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: var(--footer-text);
+        margin-bottom: 2rem;
       }
       .contact-grid {
         display: flex;
@@ -530,257 +761,261 @@
         justify-content: center;
         gap: 1.5rem;
         max-width: 1000px;
-        margin: 3rem auto 0;
+        margin: 0 auto;
       }
       .contact-item {
         display: flex;
         align-items: center;
         gap: 1rem;
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--footer-item-bg);
         padding: 1rem 2rem;
         border-radius: 50px;
         transition: var(--transition);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid var(--footer-item-border);
       }
       .contact-item:hover {
         background: var(--accent-color);
         transform: translateY(-3px);
         border-color: var(--accent-color);
       }
-      .contact-item a, .contact-item i {
-        color: var(--text-light);
+      .contact-item a,
+      .contact-item i {
+        color: var(--footer-text);
         font-size: 1.1rem;
         font-weight: 500;
       }
-      .contact-item:hover a, .contact-item:hover i {
-        color: var(--primary-color);
+      .contact-item:hover a,
+      .contact-item:hover i {
+        color: var(--ink-on-accent);
       }
-
-      /* ===== Footer ===== */
-      footer {
-        background-color: #051626;
-        color: var(--text-light);
-        padding: 3rem 2rem 1.5rem;
-        text-align: center;
-      }
-      .footer-copyright {
-        color: #888;
-        font-size: 0.9rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 1.5rem;
-      }
-
-      /* ===== Admin UI ===== */
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: 2000;
-        justify-content: center;
-        align-items: center;
-      }
-      .modal-content {
-        background: var(--bg-white);
-        padding: 2.5rem;
-        border-radius: 12px;
-        width: 90%;
-        max-width: 400px;
+      .footer-grid {
         position: relative;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 3rem;
+        text-align: left;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-top: 1px solid var(--footer-border);
       }
-      #admin_heading{
-        color: black;
-      }
-      .close-modal {
-        position: absolute;
-        top: 10px;
-        right: 15px;
+      .footer-brand .logo {
         font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-gray);
-      }
-      .admin-input {
-        width: 100%;
-        padding: 0.8rem;
-        margin-bottom: 1rem;
-        border: 1px solid var(--border-color);
-        border-radius: 6px;
-        font-size: 1rem;
-      }
-      .password-wrapper {
-        position: relative;
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      .password-wrapper .admin-input {
-        margin-bottom: 0;
-        padding-right: 2.5rem;
-      }
-      .password-wrapper .toggle-icon {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        color: var(--text-gray);
-        font-size: 1.1rem;
-      }
-      .password-wrapper .toggle-icon:hover {
-        color: var(--primary-color);
-      }
-
-      .floating-admin-btn {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: 999;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-      .admin-action-bar {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        display: none;
-        flex-direction: column;
-        gap: 0.7rem;
-        z-index: 999;
-        align-items: flex-end;
-      }
-      .admin-action-bar.show {
-        display: flex;
-      }
-      .admin-action-bar button {
-        border: none;
-        border-radius: 30px;
-        padding: 0.8rem 1.6rem;
-        font-size: 0.95rem;
         font-weight: 700;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        color: var(--footer-text);
+        margin-bottom: 0.9rem;
+      }
+      .footer-brand .logo i {
+        color: var(--accent-color);
+      }
+      .footer-brand .logo span {
+        color: var(--accent-color);
+      }
+      .footer-slogan {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.3px;
+      }
+      .footer-brand p.footer-desc {
+        color: var(--footer-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 400px;
+      }
+      .footer-col h4 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--footer-text);
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+      }
+      .footer-links li {
+        margin-bottom: 0.7rem;
+      }
+      .footer-links li a {
+        color: var(--footer-text-muted);
+        font-size: 0.95rem;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .footer-links li a i {
+        font-size: 0.7rem;
+        color: var(--accent-color);
+        transition: transform 0.3s ease;
+      }
+      .footer-links li a:hover {
+        color: var(--accent-color);
+        padding-left: 4px;
+      }
+      .footer-links li a:hover i {
+        transform: translateX(3px);
+      }
+      .footer-socials {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+      }
+      .footer-socials a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--footer-item-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--footer-text);
+        font-size: 1rem;
         transition: var(--transition);
       }
-      .admin-action-bar button:hover {
-        transform: translateY(-2px);
+      .footer-socials a:hover {
+        background: var(--accent-color);
+        color: var(--ink-on-accent);
+        border-color: var(--accent-color);
+        transform: translateY(-4px);
       }
-      #save-changes-btn {
-        background-color: #28a745;
-        color: white;
-      }
-      #download-code-btn {
-        background-color: var(--secondary-color);
-        color: white;
-      }
-      #logout-btn {
-        background-color: #dc3545;
-        color: white;
-      }
-
-      /* Edit Mode Visuals */
-      .edit-mode-active [contenteditable="true"] {
-        border: 2px dashed var(--accent-color);
-        padding: 5px;
-        border-radius: 5px;
-        background: rgba(248, 171, 28, 0.05);
-        outline: none;
-      }
-      .edit-mode-active img {
-        cursor: pointer;
-        border: 3px dashed var(--secondary-color);
-        opacity: 0.8;
-      }
-      .edit-mode-active img:hover {
-        opacity: 1;
-        filter: brightness(0.8);
-      }
-
-      .delete-card-btn {
-        display: none;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #ff4757;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        z-index: 10;
-      }
-      .edit-mode-active .delete-card-btn {
+      .footer-bottom {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        border-top: 1px solid var(--footer-border);
+        padding-top: 1.5rem;
+        text-align: center;
       }
-
-      .add-placeholder {
-        display: none;
-        background: rgba(0, 0, 0, 0.02);
-        border: 2px dashed #ccc;
-        border-radius: 16px;
-        min-height: 200px;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-gray);
-        font-weight: 600;
-        font-size: 1.2rem;
-        transition: 0.3s;
-        flex-direction: column;
-        gap: 10px;
+      .footer-copyright {
+        color: var(--footer-copyright);
+        font-size: 0.9rem;
       }
-      .edit-mode-active .add-placeholder {
-        display: flex;
+      .footer-credit {
+        color: var(--footer-credit);
+        font-size: 0.85rem;
       }
-      .add-placeholder:hover {
-        background: rgba(0, 123, 255, 0.05);
-        border-color: var(--secondary-color);
-        color: var(--secondary-color);
+      .footer-credit i {
+        color: var(--accent-color);
       }
 
       /* ===== Responsive ===== */
       @media (max-width: 992px) {
-        .about-container { grid-template-columns: 1fr; }
-        .about-image { max-width: 500px; margin: 0 auto; }
-        .hero-content h1 { font-size: 2.8rem; }
+        .about-container {
+          grid-template-columns: 1fr;
+        }
+        .about-image {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+        .hero-content h1 {
+          font-size: 2.8rem;
+        }
       }
       @media (max-width: 768px) {
-        #desktop-nav { display: none; }
-        #hamburger-nav { display: flex; }
-        section { padding: 4rem 1.5rem; }
-        .hero-content h1 { font-size: 2.2rem; }
-        .hero-content p.tagline { font-size: 1.15rem; }
-        .contact-item { width: 100%; justify-content: center; }
-        #hero .hero-gear { font-size: 16rem; }
+        #desktop-nav {
+          display: none;
+        }
+        #hamburger-nav {
+          display: flex;
+        }
+        section {
+          padding: 4rem 1.5rem;
+          scroll-margin-top: 55px;
+        }
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        .hero-content p.tagline {
+          font-size: 1.15rem;
+        }
+        .contact-item {
+          width: 100%;
+          justify-content: center;
+        }
+        #hero .hero-gear {
+          font-size: 16rem;
+        }
+        .hero-cta-group {
+          flex-direction: column;
+          align-items: center;
+        }
+        #hero {
+          background-attachment: scroll;
+          margin-top: 0;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      @media (max-width: 380px) {
+        #hamburger-nav {
+          padding: 0.85rem 0.9rem;
+        }
+        #hamburger-nav .logo {
+          font-size: 1.1rem;
+        }
+        #hamburger-nav .nav-right {
+          gap: 0.5rem;
+        }
+        #hamburger-nav .theme-toggle {
+          width: 32px;
+          height: 32px;
+          font-size: 0.8rem;
+        }
+        .hamburger-icon {
+          width: 22px;
+          height: 18px;
+        }
       }
       @media (max-width: 480px) {
-        .about-cards { flex-direction: column; }
-        .team-card { width: 100%; max-width: 280px; }
-        .section-title { font-size: 2rem; }
-        .admin-action-bar { right: 12px; bottom: 12px; }
-        .admin-action-bar button { padding: 0.7rem 1.2rem; font-size: 0.85rem; }
+        .about-cards {
+          flex-direction: column;
+        }
+        .team-card {
+          width: 100%;
+          max-width: 280px;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+        .footer-top .footer-title {
+          font-size: 1.6rem;
+        }
+        .footer-grid {
+          text-align: center;
+        }
+        .footer-brand p.footer-desc {
+          max-width: none;
+          margin: 0 auto;
+        }
+        .footer-links li a {
+          justify-content: center;
+        }
+        .footer-socials {
+          justify-content: center;
+        }
       }
     </style>
   </head>
-  <body class="">
+  <body>
     <nav id="desktop-nav">
-      <div class="logo"><i class="fa-solid fa-gear"></i>ASME<span>-AITR</span></div>
+      <div class="logo">
+        <i class="fa-solid fa-gear"></i>ASME<span>-AITR</span>
+      </div>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -788,11 +1023,37 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-right">
+        <button
+          class="theme-toggle"
+          id="theme-toggle-desktop"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
     </nav>
 
     <nav id="hamburger-nav">
-      <div class="logo"><i class="fa-solid fa-gear"></i>ASME<span>- AITR</span></div>
-      <div class="hamburger-icon" id="hamburger-icon"><span></span><span></span><span></span></div>
+      <div class="logo">
+        <i class="fa-solid fa-gear"></i>ASME<span>- AITR</span>
+      </div>
+      <div class="nav-right">
+        <button
+          class="theme-toggle"
+          id="theme-toggle-mobile"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <div class="hamburger-icon" id="hamburger-icon">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
       <ul class="menu-links" id="menu-links">
         <li><a href="#hero" class="mobile-link">Home</a></li>
         <li><a href="#about" class="mobile-link">About</a></li>
@@ -806,231 +1067,377 @@
       <i class="fa-solid fa-gear hero-gear g1" aria-hidden="true"></i>
       <i class="fa-solid fa-gears hero-gear g2" aria-hidden="true"></i>
       <div class="hero-content">
-      <h1>Acropolis Institute Of Technology And Research</h1>
-      <p>ASME Student Chapter (ASME-AITR)</p>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
+        <span class="eyebrow">ASME Student Chapter</span>
+        <h1>Acropolis Institute Of Technology And Research</h1>
+        <p class="tagline">Engineering Ideas Into Motion</p>
+        <p class="subtagline">
+          A community of mechanical minds building, learning and innovating
+          together — from campus workshops to real-world engineering challenges.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#about" class="btn">Explore The Chapter</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
     </section>
 
     <section id="about">
-      <div class="section-subtitle reveal visible"><i class="fa-solid fa-car-side"></i>Get To Know More</div>
-      <h2 class="section-title reveal visible">About Our Chapter</h2>
-      <div class="about-container">
-        <div class="about-image reveal visible">
-          <img src="assets/Asme_profile_pic.jpg" alt="Engineering Students">
-        </div>
-        <div class="about-details">
-        <div class="about-cards">
-          <div class="about-card">
-            <i class="fa-solid fa-calendar-check"></i>
-            <h4>Established</h4>
-            <p>11th Dec 2024</p>
-          </div>
-          <div class="about-card">
-            <i class="fa-solid fa-users"></i>
-            <h4>Network</h4>
-            <p>60+ Members</p>
-          </div>
-        </div>
-        <p class="about-description">
-          The ASME Student Chapter at Acropolis Institute of Technology and Research was officially established on December 11, 2024, marking a significant step toward empowering students in the field of mechanical engineering. This chapter aims to provide a dynamic platform for students to enhance their technical knowledge, develop leadership skills, and engage in industry-oriented activities such as workshops, seminars, and competitions.
-        </p>
+      <div class="section-subtitle reveal">
+        <i class="fa-solid fa-car-side"></i>Get To Know More
       </div>
+      <h2 class="section-title reveal">About Our Chapter</h2>
+      <div class="about-container">
+        <div class="about-image reveal">
+          <img src="assets/Asme_profile_pic.jpg" alt="Engineering Students" />
+        </div>
+        <div class="about-details reveal">
+          <div class="about-cards">
+            <div class="about-card">
+              <i class="fa-solid fa-calendar-check"></i>
+              <h4>Established</h4>
+              <p>11th Dec 2024</p>
+            </div>
+            <div class="about-card">
+              <i class="fa-solid fa-users"></i>
+              <h4>Network</h4>
+              <p>60+ Members</p>
+            </div>
+          </div>
+          <p class="about-description">
+            The ASME Student Chapter at Acropolis Institute of Technology and
+            Research was officially established on December 11, 2024, marking a
+            significant step toward empowering students in the field of
+            mechanical engineering. This chapter aims to provide a dynamic
+            platform for students to enhance their technical knowledge, develop
+            leadership skills, and engage in industry-oriented activities such
+            as workshops, seminars, and competitions.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="team-lead">
-      <div class="section-subtitle reveal visible"><i class="fa-solid fa-user-tie"></i>Meet Our Leaders</div>
-      <h2 class="section-title reveal visible">Team Structure</h2>
+      <div class="section-subtitle reveal">
+        <i class="fa-solid fa-user-tie"></i>Meet Our Leaders
+      </div>
+      <h2 class="section-title reveal">Team Structure</h2>
       <div class="team-container">
-        <h3 class="team-tier-title reveal visible">Faculty Advisors</h3>
+        <h3 class="team-tier-title reveal">Faculty Advisors</h3>
         <div class="team-grid-top" id="advisors-grid">
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1pMbmJxFx02oD-s4nqq6NZdcjBpuFwERV" alt="Dr. Amit Kumar Marwah">
-          <h4>Dr. Hemant Marmat</h4>
-          <p>Head of Department (HOD)</p>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1pMbmJxFx02oD-s4nqq6NZdcjBpuFwERV"
+              alt="Dr. Hemant Marmat"
+            />
+            <h4>Dr. Hemant Marmat</h4>
+            <p>Head of Department (HOD)</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1lCIg_cALrDfXii22JCFBgpWXa3X-PNTS"
+              alt="Dr. Abhinav Giri"
+            />
+            <h4>Dr. Abhinav Giri</h4>
+            <p>Faculty Advisor</p>
+          </div>
         </div>
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1lCIg_cALrDfXii22JCFBgpWXa3X-PNTS" alt="Dr. Abhinav Giri">
-          <h4>Dr. Abhinav Giri</h4>
-          <p>Faculty Advisor</p>
-        </div>
-        
-      </div>
 
-        <h3 class="team-tier-title reveal visible">Core Team</h3>
+        <h3 class="team-tier-title reveal">Core Team</h3>
         <div class="team-grid-bottom" id="core-grid">
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1FLcdx9rGcCQLrYuxZ94sRCr-3sDjfM9o" alt="Atharv Soni">
-          <h4>Ms. Pallavi Shahi</h4><h4 style="font-family: Inter, sans-serif; color: rgb(10, 37, 64); border-color: rgb(248, 171, 28); border-style: dashed; border-width: 1.6px; border-image: none 100% / 1 / 0 stretch;"><br></h4>
-          <p>Chairperson</p>
-        </div>
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1-Q9CfI0gzOJxXqOTYO2CDIRtuC0k4NM8" alt="Bhashit Dangi">
-          <h4>Mr. Mohit Bhaware</h4>
-          <p>Vice Chairperson</p>
-        </div>
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1LCQPehvUW-4XZH2i-IUXxoC74tAKDArq" alt="Pallavi Shahi">
-          <h4>Ms. Ritika Solanki</h4>
-          <p>Secretary</p>
-        </div>
-        <div class="team-card">
-          
-          <img src="https://lh3.googleusercontent.com/d/1BGJKrn-H0L2kxo9X-5gj2dsXbgX2bB8h" alt="Rudransh Vohra">
-          <h4>Mr. Samarth Baiware</h4>
-          <p>Treasurer</p>
-        </div>
-        
-        <div class="team-card reveal visible">
-              
-              <img src="https://lh3.googleusercontent.com/d/1VgC-qqRtLFm6dkCW7Sthy355I72dnPtf" alt="New Member">
-              <h4>Ms. Mohini Chourasiya</h4>
-              <p><span style="font-family: Inter, sans-serif;">Event Head</span></p></div><div class="team-card reveal visible">
-              
-              <img src="https://lh3.googleusercontent.com/d/1pdsnlcdLHgFBYmH1SWfLfjP4xEVKF5tv" alt="New Member">
-              <h4>Mr. Nikhil Jawalkar</h4>
-              <p><span style="font-family: Inter, sans-serif;">Design Head</span></p></div><div class="team-card reveal visible">
-              
-              <img src="https://lh3.googleusercontent.com/d/1k4ENN5Ec8XLT0XdQk6GcnGe1DLJhPE1K" alt="New Member">
-              <h4>Mr. Prem Boke</h4>
-              <p><span style="font-family: Inter, sans-serif;">Photography Head</span></p></div><div class="team-card reveal visible">
-              
-              <img src="https://lh3.googleusercontent.com/d/1lJWe9p62514Tyd5O5hpuyeH-AkQK_bnk" alt="New Member">
-              <h4>Ms. Prachi Agrawal</h4>
-              <p><span style="font-family: Inter, sans-serif;">Logistics Head</span></p></div><div class="team-card reveal visible">
-              
-              <img src="https://lh3.googleusercontent.com/d/1pD-9ys7L-xT_O_sRMwvVme6XExTqxNsR" alt="New Member">
-              <h4>Mr. Harshit Patel</h4>
-              <p><span style="font-family: Inter, sans-serif;">Data Head</span></p></div>
-      </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1FLcdx9rGcCQLrYuxZ94sRCr-3sDjfM9o"
+              alt="Ms. Pallavi Shahi"
+            />
+            <h4>Ms. Pallavi Shahi</h4>
+            <p>Chairperson</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1-Q9CfI0gzOJxXqOTYO2CDIRtuC0k4NM8"
+              alt="Mr. Mohit Bhaware"
+            />
+            <h4>Mr. Mohit Bhaware</h4>
+            <p>Vice Chairperson</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1LCQPehvUW-4XZH2i-IUXxoC74tAKDArq"
+              alt="Ms. Ritika Solanki"
+            />
+            <h4>Ms. Ritika Solanki</h4>
+            <p>Secretary</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1BGJKrn-H0L2kxo9X-5gj2dsXbgX2bB8h"
+              alt="Mr. Samarth Baiware"
+            />
+            <h4>Mr. Samarth Baiware</h4>
+            <p>Treasurer</p>
+          </div>
 
-        <h3 class="team-tier-title reveal visible">Old Team</h3>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1VgC-qqRtLFm6dkCW7Sthy355I72dnPtf"
+              alt="Ms. Mohini Chourasiya"
+            />
+            <h4>Ms. Mohini Chourasiya</h4>
+            <p>Event Head</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1pdsnlcdLHgFBYmH1SWfLfjP4xEVKF5tv"
+              alt="Mr. Nikhil Jawalkar"
+            />
+            <h4>Mr. Nikhil Jawalkar</h4>
+            <p>Design Head</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1k4ENN5Ec8XLT0XdQk6GcnGe1DLJhPE1K"
+              alt="Mr. Prem Boke"
+            />
+            <h4>Mr. Prem Boke</h4>
+            <p>Photography Head</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1lJWe9p62514Tyd5O5hpuyeH-AkQK_bnk"
+              alt="Ms. Prachi Agrawal"
+            />
+            <h4>Ms. Prachi Agrawal</h4>
+            <p>Logistics Head</p>
+          </div>
+          <div class="team-card reveal">
+            <img
+              src="https://lh3.googleusercontent.com/d/1pD-9ys7L-xT_O_sRMwvVme6XExTqxNsR"
+              alt="Mr. Harshit Patel"
+            />
+            <h4>Mr. Harshit Patel</h4>
+            <p>Data Head</p>
+          </div>
+        </div>
+
+        <h3 class="team-tier-title reveal">Old Team</h3>
         <div class="team-grid-bottom" id="old-team-grid">
-          <div class="team-card reveal visible">
-            
+          <div class="team-card reveal">
             <h4>Mr. Atharv Soni</h4>
             <p>Chairperson</p>
           </div>
-          <div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr.&nbsp;</span>Bhashit Dangi</h4>
-              <p>Vice Chairperson</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Ms. </span>Pallavi Shahi</h4>
-              <p>Secretary</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr. </span>Rudransh Vohra</h4>
-              <p>Treasurer</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr. </span>Prince Verma</h4>
-              <p>Event Head</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr. </span>Sumit</h4>
-              <p>Design Head</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr. </span>Aryan Patel</h4>
-              <p>Photography Head</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Ms. </span>Aashita Jain</h4>
-              <p>Logistics Head</p></div><div class="team-card reveal visible">
-              
-              <h4><span style="font-family: Inter, sans-serif; font-size: 1.1rem; letter-spacing: 0.3px;">Mr. </span>Kartik Sen</h4>
-              <p>Data Head</p></div>
+          <div class="team-card reveal">
+            <h4>Mr. Bhashit Dangi</h4>
+            <p>Vice Chairperson</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Ms. Pallavi Shahi</h4>
+            <p>Secretary</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Mr. Rudransh Vohra</h4>
+            <p>Treasurer</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Mr. Prince Verma</h4>
+            <p>Event Head</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Mr. Sumit</h4>
+            <p>Design Head</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Mr. Aryan Patel</h4>
+            <p>Photography Head</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Ms. Aashita Jain</h4>
+            <p>Logistics Head</p>
+          </div>
+          <div class="team-card reveal">
+            <h4>Mr. Kartik Sen</h4>
+            <p>Data Head</p>
+          </div>
         </div>
-
       </div>
     </section>
 
     <section id="events">
-      <div class="section-subtitle reveal visible"><i class="fa-solid fa-flag-checkered"></i>Our Journey</div>
-      <h2 class="section-title reveal visible">Events &amp; Progress</h2>
+      <div class="section-subtitle reveal">
+        <i class="fa-solid fa-flag-checkered"></i>Our Journey
+      </div>
+      <h2 class="section-title reveal">Events &amp; Progress</h2>
       <div class="events-container" id="events-grid">
-      <div class="event-card">
-        
-        <div class="event-image-wrapper">
-          <img src="https://lh3.googleusercontent.com/d/1h_wCttz3qKi-1sb0oxMqBA0VQW2xTrep" alt="Photo Shoot">
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1h_wCttz3qKi-1sb0oxMqBA0VQW2xTrep"
+              alt="Student Section Photoshoot"
+            />
+          </div>
+          <div class="event-info">
+            <h3>Student Section Photoshoot</h3>
+          </div>
         </div>
-        <div class="event-info">
-          <h3>Student Section Photoshoot</h3>
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1-RSyS57Ka3YK80lcSXBJ7wIcxVna2UD8"
+              alt="Student Photoshoot"
+            />
+          </div>
+          <div class="event-info">
+            <h3>Student Photoshoot</h3>
+          </div>
         </div>
-      </div>
-      <div class="event-card">
-        
-        <div class="event-image-wrapper">
-          <img src="https://lh3.googleusercontent.com/d/1-RSyS57Ka3YK80lcSXBJ7wIcxVna2UD8" alt="Women Group">
-        </div>
-        <div class="event-info">
-          <h3>Student Photoshoot</h3>
-        </div>
-      </div>
-      
-      <div class="event-card">
-            
-            <div class="event-image-wrapper">
-              <img src="https://lh3.googleusercontent.com/d/1DX9RZCB7VauJ7VSgkrZhllMzI-mni3ox" alt="New Event">
-            </div>
-            <div class="event-info">
-              <h3>ASME Women Group Launch</h3>
-            </div>
-          </div><div class="event-card reveal visible">
-              
-              <div class="event-image-wrapper">
-                <img src="https://lh3.googleusercontent.com/d/1MqhTqC0uHoJZ1iWQLGbIGa0p9Zr5_x6i" alt="New Event">
-              </div>
-              <div class="event-info"><h3><h3 style="font-family: Inter, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif; font-size: 1.2rem; color: rgb(51, 51, 51); letter-spacing: normal;">Certification Course</h3></h3></div></div><div class="event-card reveal visible">
-              
-              <div class="event-image-wrapper">
-                <img src="https://lh3.googleusercontent.com/d/1FHm9TRFhfxgQSQTzNtLeI7EzOKreATCi" alt="New Event">
-              </div>
-              <div class="event-info"><h3>Inauguration Ceremony</h3></div></div><div class="event-card reveal visible">
-              
-              <div class="event-image-wrapper">
-                <img src="https://lh3.googleusercontent.com/d/1eQbEA70dligXO9MXHbvOe1Wsw6Rj6EYb" alt="New Event">
-              </div>
-              <div class="event-info"><h3>Felicitation Ceremony</h3></div></div>
-    </div>
-    </section>
 
-    <section id="contact">
-      <div class="section-subtitle"><i class="fa-solid fa-wrench"></i>Reach Out To Us</div>
-      <h2 class="section-title">Contact Information</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:asme-ss@acropolis.in">asme-ss@acropolis.in</a>
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1DX9RZCB7VauJ7VSgkrZhllMzI-mni3ox"
+              alt="ASME Women Group Launch"
+            />
+          </div>
+          <div class="event-info">
+            <h3>ASME Women Group Launch</h3>
+          </div>
         </div>
-        <div class="contact-item">
-          <i class="fa-brands fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/asme-aitr-60353a367" target="_blank">LinkedIn</a>
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1MqhTqC0uHoJZ1iWQLGbIGa0p9Zr5_x6i"
+              alt="Certification Course"
+            />
+          </div>
+          <div class="event-info">
+            <h3>Certification Course</h3>
+          </div>
         </div>
-        <div class="contact-item">
-          <i class="fa-brands fa-instagram"></i>
-          <a href="https://www.instagram.com/asme_aitr" target="_blank">Instagram</a>
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1FHm9TRFhfxgQSQTzNtLeI7EzOKreATCi"
+              alt="Inauguration Ceremony"
+            />
+          </div>
+          <div class="event-info"><h3>Inauguration Ceremony</h3></div>
         </div>
-        <div class="contact-item">
-          <i class="fa-brands fa-youtube"></i>
-          <a href="https://youtube.com/@asme-aitr" target="_blank">YouTube</a>
+        <div class="event-card reveal">
+          <div class="event-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/d/1eQbEA70dligXO9MXHbvOe1Wsw6Rj6EYb"
+              alt="Felicitation Ceremony"
+            />
+          </div>
+          <div class="event-info"><h3>Felicitation Ceremony</h3></div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="footer-copyright">
-        <p>© 2026 ASME-AITR . All Rights Reserved.</p>
+    <footer id="contact">
+      <i class="fa-solid fa-gear footer-gear" aria-hidden="true"></i>
+
+      <div class="footer-top reveal">
+        <div class="section-subtitle">
+          <i class="fa-solid fa-wrench"></i>Reach Out To Us
+        </div>
+        <h2 class="footer-title">Contact Information</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:asme-ss@acropolis.in">asme-ss@acropolis.in</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/asme-aitr-60353a367"
+              target="_blank"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-instagram"></i>
+            <a href="https://www.instagram.com/asme_aitr" target="_blank"
+              >Instagram</a
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-youtube"></i>
+            <a href="https://youtube.com/@asme-aitr" target="_blank">YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-grid reveal">
+        <div class="footer-brand">
+          <div class="logo">
+            <i class="fa-solid fa-gear"></i>ASME<span>-AITR</span>
+          </div>
+          <p class="footer-slogan">Engineering Ideas Into Motion</p>
+          <p class="footer-desc">
+            The ASME Student Chapter at Acropolis Institute of Technology and
+            Research — a community of mechanical minds turning curiosity into
+            competence, one project at a time.
+          </p>
+          <div class="footer-socials">
+            <a
+              href="https://www.linkedin.com/in/asme-aitr-60353a367"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/asme_aitr"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://youtube.com/@asme-aitr"
+              target="_blank"
+              aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#hero"><i class="fa-solid fa-chevron-right"></i>Home</a>
+            </li>
+            <li>
+              <a href="#about"
+                ><i class="fa-solid fa-chevron-right"></i>About</a
+              >
+            </li>
+            <li>
+              <a href="#team-lead"
+                ><i class="fa-solid fa-chevron-right"></i>Team</a
+              >
+            </li>
+            <li>
+              <a href="#events"
+                ><i class="fa-solid fa-chevron-right"></i>Events</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-solid fa-chevron-right"></i>Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 ASME-AITR. All Rights Reserved.</p>
+        <p class="footer-credit">
+          <i class="fa-solid fa-gear"></i> Built by mechanical minds, driven by
+          ASME.
+        </p>
       </div>
     </footer>
-
-    
-
-    
-    
-    
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -1048,14 +1455,40 @@
           }),
         );
 
-        /* ===== Password Visibility ===== */
-        const togglePasswordBtn = document.getElementById("toggle-password");
-        const passwordInput = document.getElementById("admin-password");
-        togglePasswordBtn.addEventListener("click", function () {
-          const newType = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-          passwordInput.setAttribute("type", newType);
-          this.classList.toggle("fa-eye");
-          this.classList.toggle("fa-eye-slash");
+        /* ===== Dark Mode Toggle ===== */
+        const root = document.documentElement;
+        const themeButtons = [
+          document.getElementById("theme-toggle-desktop"),
+          document.getElementById("theme-toggle-mobile"),
+        ];
+
+        const applyTheme = (theme) => {
+          root.setAttribute("data-theme", theme);
+          try {
+            localStorage.setItem("asmeTheme", theme);
+          } catch (err) {
+            /* localStorage unavailable — theme just won't persist */
+          }
+        };
+
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem("asmeTheme");
+        } catch (err) {
+          savedTheme = null;
+        }
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+        themeButtons.forEach((btn) => {
+          if (!btn) return;
+          btn.addEventListener("click", () => {
+            const next =
+              root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            applyTheme(next);
+          });
         });
 
         /* ===== Scroll Reveal ===== */
@@ -1070,327 +1503,10 @@
           },
           { threshold: 0.15 },
         );
-        document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-        const observeNew = (el) => {
-          el.classList.add("reveal");
-          revealObserver.observe(el);
-          requestAnimationFrame(() => el.classList.add("visible"));
-        };
-
-        /* ===== Load Saved Data ===== */
-        const loadSavedData = () => {
-          const savedData = localStorage.getItem("asmeWebsiteData");
-          if (!savedData) return;
-          const data = JSON.parse(savedData);
-          if (data.hero) document.querySelector(".hero-content").innerHTML = data.hero;
-          if (data.about) document.querySelector(".about-details").innerHTML = data.about;
-          if (data.advisors) document.getElementById("advisors-grid").innerHTML = data.advisors;
-          if (data.core) document.getElementById("core-grid").innerHTML = data.core;
-          if (data.oldTeam) document.getElementById("old-team-grid").innerHTML = data.oldTeam;
-          if (data.events) document.getElementById("events-grid").innerHTML = data.events;
-          document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
-        };
-        loadSavedData();
-
-        /* ===== Shared Modal Builder ===== */
-        const buildModal = ({ accent, title, bodyHTML, buttonsHTML }) => {
-          const modal = document.createElement("div");
-          modal.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:3000;display:flex;justify-content:center;align-items:center;";
-          const content = document.createElement("div");
-          content.style.cssText = `background:#fff;padding:2rem;border-radius:16px;max-width:440px;width:90%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.25);border-top:6px solid ${accent};`;
-          content.innerHTML = `<h3 style="color:#0a2540;margin-bottom:0.8rem;font-size:1.3rem;font-weight:700;">${title}</h3>${bodyHTML}<div style="display:flex;justify-content:center;gap:1rem;margin-top:1.2rem;">${buttonsHTML}</div>`;
-          modal.appendChild(content);
-          document.body.appendChild(modal);
-          return modal;
-        };
-
-        const customAlert = (message, title = "Notification") =>
-          new Promise((resolve) => {
-            const modal = buildModal({
-              accent: "#0a2540",
-              title,
-              bodyHTML: `<p style="color:#555;margin-bottom:0.5rem;font-size:1rem;line-height:1.5;">${message}</p>`,
-              buttonsHTML: `<button id='m-ok' style='background:#f8ab1c;color:#0a2540;border:none;padding:0.7rem 2.5rem;font-weight:600;border-radius:50px;cursor:pointer;font-size:1rem;'>OK</button>`,
-            });
-            modal.querySelector("#m-ok").addEventListener("click", () => {
-              modal.remove();
-              resolve();
-            });
-          });
-
-        const customPrompt = (message, defaultValue = "") =>
-          new Promise((resolve) => {
-            const modal = buildModal({
-              accent: "#007bff",
-              title: "Update Image",
-              bodyHTML: `<p style="color:#555;margin-bottom:1rem;font-size:0.95rem;text-align:left;">${message}</p>
-                <input type='text' id='m-input' value='${defaultValue}' style='width:100%;padding:0.8rem;border:1px solid #e0e0e0;border-radius:8px;font-size:1rem;outline:none;box-sizing:border-box;color:#222;'/>`,
-              buttonsHTML: `<button id='m-cancel' style='background:#f8f9fa;color:#222;border:1px solid #ccc;padding:0.7rem 1.8rem;font-weight:600;border-radius:50px;cursor:pointer;font-size:0.95rem;'>Cancel</button>
-                <button id='m-ok' style='background:#007bff;color:#fff;border:none;padding:0.7rem 2.2rem;font-weight:600;border-radius:50px;cursor:pointer;font-size:0.95rem;'>Submit</button>`,
-            });
-            const inputEl = modal.querySelector("#m-input");
-            inputEl.focus();
-            inputEl.select();
-            modal.querySelector("#m-ok").addEventListener("click", () => {
-              const val = inputEl.value;
-              modal.remove();
-              resolve(val);
-            });
-            modal.querySelector("#m-cancel").addEventListener("click", () => {
-              modal.remove();
-              resolve(null);
-            });
-          });
-
-        const customConfirm = (message) =>
-          new Promise((resolve) => {
-            const modal = buildModal({
-              accent: "#ff4757",
-              title: "Are you sure?",
-              bodyHTML: `<p style="color:#555;margin-bottom:0.5rem;font-size:1rem;line-height:1.5;">${message}</p>`,
-              buttonsHTML: `<button id='m-cancel' style='background:#f8f9fa;color:#222;border:1px solid #ccc;padding:0.7rem 1.8rem;font-weight:600;border-radius:50px;cursor:pointer;font-size:0.95rem;'>No</button>
-                <button id='m-ok' style='background:#ff4757;color:#fff;border:none;padding:0.7rem 2.2rem;font-weight:600;border-radius:50px;cursor:pointer;font-size:0.95rem;'>Yes, Delete</button>`,
-            });
-            modal.querySelector("#m-ok").addEventListener("click", () => {
-              modal.remove();
-              resolve(true);
-            });
-            modal.querySelector("#m-cancel").addEventListener("click", () => {
-              modal.remove();
-              resolve(false);
-            });
-          });
-
-        /* ===== Admin Logic ===== */
-        const adminTriggerBtn = document.getElementById("admin-trigger-btn");
-        const adminModal = document.getElementById("admin-modal");
-        const closeModal = document.getElementById("close-modal");
-        const loginBtn = document.getElementById("login-btn");
-        const loginError = document.getElementById("login-error");
-        const actionBar = document.getElementById("admin-action-bar");
-        const saveBtn = document.getElementById("save-changes-btn");
-        const downloadBtn = document.getElementById("download-code-btn");
-        const logoutBtn = document.getElementById("logout-btn");
-
-        const getTextElements = () =>
-          document.querySelectorAll("h1, h2, h3, h4, p:not(.footer-copyright p), span.eyebrow, span.tagline");
-
-        adminTriggerBtn.addEventListener("click", () => (adminModal.style.display = "flex"));
-        closeModal.addEventListener("click", () => {
-          adminModal.style.display = "none";
-          loginError.style.display = "none";
-        });
-
-        loginBtn.addEventListener("click", async () => {
-          if (
-            document.getElementById("admin-id").value === "ASME2026" &&
-            document.getElementById("admin-password").value === "ASME@2026"
-          ) {
-            adminModal.style.display = "none";
-            adminTriggerBtn.style.display = "none";
-            actionBar.classList.add("show");
-            document.body.classList.add("edit-mode-active");
-            getTextElements().forEach((el) => el.setAttribute("contenteditable", "true"));
-            
-            await customAlert(
-              "1. Click on TEXT to edit.<br>2. Click on IMAGES to update URLs.<br>3. Click '+' to add new cards.<br>4. Click the 'Trash' icon to delete cards.<br>5. Use <b>Save Changes</b> to store your edits, and <b>Download Code</b> whenever you want the updated HTML file.",
-              "Login Successful!"
-            );
-          } else {
-            loginError.style.display = "block";
-          }
-        });
-
-        const collectData = () => ({
-          hero: document.querySelector(".hero-content").innerHTML,
-          about: document.querySelector(".about-details").innerHTML,
-          advisors: document.getElementById("advisors-grid").innerHTML,
-          core: document.getElementById("core-grid").innerHTML,
-          oldTeam: document.getElementById("old-team-grid").innerHTML,
-          events: document.getElementById("events-grid").innerHTML,
-        });
-
-        const exitEditMode = () => {
-          document.body.classList.remove("edit-mode-active");
-          getTextElements().forEach((el) => el.setAttribute("contenteditable", "false"));
-          actionBar.classList.remove("show");
-          adminTriggerBtn.style.display = "block";
-        };
-
-        // Save: stores to localStorage only
-        saveBtn.addEventListener("click", async () => {
-          // Exit edit mode first to strip editing attributes before saving
-          exitEditMode(); 
-          
-          localStorage.setItem("asmeWebsiteData", JSON.stringify(collectData()));
-          
-          await customAlert(
-            "Your changes have been saved to local storage. Use the <b>Download Code</b> button anytime you want the updated HTML file.",
-            "Changes Saved!"
-          );
-        });
-
-        // Download: generates and downloads the pure static HTML
-        downloadBtn.addEventListener("click", async () => {
-          // 1. Create a clone of the HTML so we don't disrupt the live editing session
-          const clonedHTML = document.documentElement.cloneNode(true);
-
-          // 2. Remove all Admin UI elements from the cloned copy
-          const adminSelectorsToRemove = [
-            "#admin-modal",
-            "#admin-trigger-btn",
-            "#admin-action-bar",
-            ".add-placeholder",
-            ".delete-card-btn"
-          ];
-
-          adminSelectorsToRemove.forEach(selector => {
-            clonedHTML.querySelectorAll(selector).forEach(el => el.remove());
-          });
-
-          // 3. Remove edit mode class and editing attributes
-          clonedHTML.querySelector("body").classList.remove("edit-mode-active");
-          clonedHTML.querySelectorAll("[contenteditable]").forEach(el => {
-            el.removeAttribute("contenteditable");
-          });
-
-          // 4. Generate pure static code and trigger download
-          const fullHTML = "<!DOCTYPE html>\n" + clonedHTML.outerHTML;
-          const blob = new Blob([fullHTML], { type: "text/html" });
-          const link = document.createElement("a");
-          link.href = URL.createObjectURL(blob);
-          link.download = "index.html";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          URL.revokeObjectURL(link.href);
-
-          await customAlert(
-            "A clean, static 'index.html' file (without admin controls) has been downloaded.",
-            "Code Downloaded!"
-          );
-        });
-
-        // Logout Event handler
-        logoutBtn.addEventListener("click", () => {
-          exitEditMode();
-          window.location.reload();
-        });
-
-        /* ===== Dynamic Admin Controls ===== */
-        document.body.addEventListener("click", async (e) => {
-          if (!document.body.classList.contains("edit-mode-active")) return;
-
-          if (e.target.tagName === "IMG") {
-            e.preventDefault();
-            const currentSrc = e.target.src;
-            let newUrl = await customPrompt(
-              "Paste the Google Drive share link (with 'Anyone with the link' access) or any direct image URL here:",
-              currentSrc
-            );
-            if (newUrl && newUrl.trim() !== "") {
-              if (newUrl.includes("drive.google.com/file/d/")) {
-                try {
-                  const fileId = newUrl.split("/d/")[1].split("/")[0];
-                  newUrl = "https://lh3.googleusercontent.com/d/" + fileId;
-                } catch (error) {
-                  await customAlert("The Google Drive link appears to be invalid. Please copy it carefully.", "Format Error");
-                }
-              }
-              e.target.src = newUrl;
-            }
-          }
-
-          const deleteBtn = e.target.closest(".delete-card-btn");
-          if (deleteBtn) {
-            const card = deleteBtn.closest(".team-card, .event-card");
-            if (card) {
-              const confirmDelete = await customConfirm("Are you sure you want to delete this card? This action will be saved permanently once you click Save Changes.");
-              if (confirmDelete) card.remove();
-            }
-          }
-
-          const addTeamBtn = e.target.closest(".add-team-btn");
-          if (addTeamBtn) {
-            const grid = document.getElementById(addTeamBtn.getAttribute("data-target"));
-            const newCard = document.createElement("div");
-            newCard.className = "team-card";
-            newCard.innerHTML = `
-              <button class="delete-card-btn" title="Delete Card"><i class="fa-solid fa-trash"></i></button>
-              <img src="https://ui-avatars.com/api/?name=New+Member&background=e0e0e0&size=150" alt="New Member"/>
-              <h4 contenteditable="true">New Member Name</h4>
-              <p contenteditable="true">Position / Role</p>`;
-            grid.insertBefore(newCard, addTeamBtn);
-            observeNew(newCard);
-          }
-
-          const addOldTeamBtn = e.target.closest(".add-old-team-btn");
-          if (addOldTeamBtn) {
-            const grid = document.getElementById(addOldTeamBtn.getAttribute("data-target"));
-            const newCard = document.createElement("div");
-            newCard.className = "team-card";
-            newCard.innerHTML = `
-              <button class="delete-card-btn" title="Delete Card"><i class="fa-solid fa-trash"></i></button>
-              <h4 contenteditable="true">Former Member</h4>
-              <p contenteditable="true">Former Role</p>`;
-            grid.insertBefore(newCard, addOldTeamBtn);
-            observeNew(newCard);
-          }
-
-          const addEventBtn = e.target.closest(".add-event-btn");
-          if (addEventBtn) {
-            const grid = document.getElementById("events-grid");
-            const newCard = document.createElement("div");
-            newCard.className = "event-card";
-            newCard.innerHTML = `
-              <button class="delete-card-btn" title="Delete Card"><i class="fa-solid fa-trash"></i></button>
-              <div class="event-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="New Event"/>
-              </div>
-              <div class="event-info"><h3 contenteditable="true">New Event Title</h3></div>`;
-            grid.insertBefore(newCard, addEventBtn);
-            observeNew(newCard);
-          }
-        });
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => revealObserver.observe(el));
       });
     </script>
-  <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-
-</body></html>
+  </body>
+</html>
